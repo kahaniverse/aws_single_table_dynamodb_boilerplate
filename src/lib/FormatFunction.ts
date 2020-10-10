@@ -1,0 +1,1 @@
+export type format = (...params:Array<string|number>) => string;

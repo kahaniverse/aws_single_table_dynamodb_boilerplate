@@ -1,0 +1,59 @@
+{
+  "name": "aws_single_table_dynamodb_boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate code for creating an API using AWS API Gateway, Single Table DynamoDB, with Claudia.js",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles",
+    "update": "tsc && claudia update --api-module bin/index --keep --no-optional-dependencies",
+    "create": "tsc && claudia create --api-module bin/index --region ap-south-1 --keep --no-optional-dependencies",
+    "deploy": "claudia create --api-module bin/index --region ap-south-1 --keep --no-optional-dependencies",
+    "pack": "tsc && claudia pack --api-module bin/index --force",
+    "destroy": "claudia destroy",
+    "release": "claudia set-version --version production"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.161",
+    "chalk": "^2.4.1",
+    "claudia-api-builder": "^4.1.2",
+    "lodash": "^4.17.20",
+    "slugify": "^1.4.5"
+  },
+  "keywords": [
+    "Kahaniverse",
+    "Kahani",
+    "Story",
+    "Stories",
+    "Universe",
+    "Read",
+    "Write",
+    "Get Published"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kahaniverse/api.git"
+  },
+  "files": [
+    "bin/**/*.*",
+    "config.js",
+    "package.json"
+  ],
+  "author": "Kahaniverse",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.63",
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.5",
+    "@types/supertest": "^2.0.10",
+    "aws-lambda": "^1.0.6",
+    "convert-excel-to-json": "^1.7.0",
+    "dynamodb-local": "0.0.31",
+    "jest": "^26.0.0",
+    "supertest": "^5.0.0",
+    "ts-jest": "^26.0.0",
+    "typescript": "^4.0.3"
+  },
+  "optionalDependencies": {
+    "aws-sdk": "^2.764.0"
+  }
+}
